@@ -10,7 +10,7 @@ export const getRunnerRevenue = async (message) => {
 	const from = msg[2]
 	const to = msg[3]
 	message.reply('Fetching data')
-	const jobID = await axios.post(process.env.API_URL + '/scraper/getrunnerrevenue', {
+	const jobID = await axios.post(process.env.API_URL + '/job/getrunnersrevenue', {
 		id: runner,
 		dates: {
 			from: from,
