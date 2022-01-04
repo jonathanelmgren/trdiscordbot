@@ -24,7 +24,7 @@ export const getRunnerRevenue = async (message) => {
 		await delay(5000)
 		try {
 			const response = await axios.get(process.env.API_URL + `/job/${jobID}`)
-			if (response.status !== 202) return message.reply(`Paid: ${response.data.message.paid} \nDisbursed: ${response.data.message.disbursed}\n **Total: ${response.data.message.paid + response.data.message.disbursed}**`)
+			if (response.status !== 202) return message.reply(`Paid: ${response.data.message.paid} \nDisbursed: ${response.data.message.disbursed}\n**Total: ${response.data.message.paid + response.data.message.disbursed}**`)
 			if (i === 60) return message.reply('Timed out after 5 minutes. Try to lower the date spans')
 		} catch (e) {
 			return message.reply(e.response.data.message)
