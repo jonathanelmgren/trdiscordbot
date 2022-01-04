@@ -17,8 +17,9 @@ export const getRunnerRevenue = async (message) => {
 			to: to,
 		},
 	})
-	const jobID = response.id
 	console.log(response)
+	const jobID = response.data.id
+	console.log(response.data.id)
 	for (let i = 0; i < 60; i++) {
 		await delay(5000)
 		try {
